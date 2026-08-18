@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohan Mukherjee — Model Risk & Quantitative Research Portfolio</title>
+<meta name="description" content="Independent model validation, credit risk, market risk, and astrophysics research projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0A0F1C;
+    --bg-alt: #0C1424;
+    --surface: #10192C;
+    --surface-2: #131E33;
+    --border: #1E2B44;
+    --border-soft: #17223A;
+    --text-primary: #E8EDF5;
+    --text-secondary: #9BAECD;
+    --text-muted: #5E6E8C;
+    --accent-blue: #7FA0C4;
+    --accent-gold: #D8B25C;
+    --accent-gold-dim: #8A7442;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'IBM Plex Sans', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body{
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    border-bottom: 1px solid var(--border-soft);
+    padding: 72px 0 48px;
+    background:
+      linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+  }
+
+  .eyebrow{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-gold-dim);
+    margin-bottom: 18px;
+  }
+
+  h1{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 40px;
+    letter-spacing: -0.01em;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+  }
+
+  .role-line{
+    font-size: 17px;
+    color: var(--text-secondary);
+    max-width: 620px;
+    margin-bottom: 28px;
+  }
+
+  .role-line strong{ color: var(--text-primary); font-weight: 500; }
+
+  .links{
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+
+  .links a{
+    color: var(--accent-blue);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .links a:hover{ border-color: var(--accent-blue); color: var(--accent-gold); }
+
+  /* ---------- Section ---------- */
+  section{ padding: 56px 0; }
+  section + section{ border-top: 1px solid var(--border-soft); }
+
+  .section-head{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .section-title{
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .section-note{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ---------- Cards ---------- */
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  @media (max-width: 720px){
+    .grid{ grid-template-columns: 1fr; }
+    h1{ font-size: 30px; }
+    header{ padding: 56px 0 40px; }
+  }
+
+  .card{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+  }
+
+  .card::before{
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-gold) 100%);
+    opacity: 0.55;
+  }
+
+  .card:hover{
+    border-color: var(--border-strong, #2A3B5C);
+    background: var(--surface-2);
+    transform: translateY(-1px);
+  }
+
+  .card-num{
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+  }
+
+  .card-title{
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+  }
+
+  .card-desc{
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+  }
+
+  .card-metrics{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent-gold);
+    background: rgba(216, 178, 92, 0.07);
+    border: 1px solid rgba(216, 178, 92, 0.18);
+    border-radius: 6px;
+    padding: 8px 10px;
+    line-height: 1.6;
+  }
+
+  .card-tools{
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: auto;
+    padding-top: 4px;
+  }
+
+  .card-cta{
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--accent-blue);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .card:hover .card-cta{ color: var(--accent-gold); }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding: 40px 0 60px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Portfolio index — v1</div>
+    <h1>Rohan Mukherjee</h1>
+    <p class="role-line">
+      <strong>Model risk & quantitative research.</strong> Independent validation work across credit risk, market risk, and stress testing, alongside a research background in astrophysics — Bayesian inference, statistical modeling, and large-scale data analysis applied to exoplanets, gravitational waves, and stellar populations.
+    </p>
+    <div class="links">
+      <a href="https://github.com/astrodud-rohan" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/rohanmukherjeee/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="mailto:rohanmukherjeemails@gmail.com">Email</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-title">Model risk & quantitative finance</div>
+      <div class="section-note">SR 11-7 · independent validation · 2025–present</div>
+    </div>
+
+    <div class="grid">
+
+      <a class="card" href="https://github.com/astrodud-rohan/Quantitative-Finance/tree/main/pd-model-validation" target="_blank" rel="noopener">
+        <div class="card-num">01</div>
+        <div class="card-title">Independent validation of a credit risk PD model</div>
+        <div class="card-desc">Built a retail credit PD scorecard, then independently re-derived all development metrics and validated it against SR 11-7 standards.</div>
+        <div class="card-metrics">GINI 0.40 → 0.28–0.30<br>HOSMER-LEMESHOW p=0.0029<br>OPINION: approved w/ conditions</div>
+        <div class="card-tools">Python · scikit-learn · WoE/IV binning</div>
+        <div class="card-cta">View repository ↗</div>
+      </a>
+
+      <a class="card" href="https://github.com/astrodud-rohan/Quantitative-Finance/tree/main/var-model-validation" target="_blank" rel="noopener">
+        <div class="card-num">02</div>
+        <div class="card-title">VaR model backtesting & challenger model</div>
+        <div class="card-desc">Backtested an equity VaR model under a stress regime; benchmarked four challenger models against it.</div>
+        <div class="card-metrics">KUPIEC POF p=0.0002<br>BREACHES: 28 vs 12.5 expected<br>ZONE: Basel red</div>
+        <div class="card-tools">Python · GARCH · Christoffersen test</div>
+        <div class="card-cta">View repository ↗</div>
+      </a>
+
+      <a class="card" href="https://github.com/astrodud-rohan/Quantitative-Finance/tree/main/stress-testing-ccar" target="_blank" rel="noopener">
+        <div class="card-num">03</div>
+        <div class="card-title">CCAR-style stress testing & sensitivity analysis</div>
+        <div class="card-desc">Credit loss satellite model across Baseline / Adverse / Severely Adverse scenarios over 9 quarters, with extrapolation-risk diagnosis.</div>
+        <div class="card-metrics">CORR(unemp, HPI) = -0.95<br>EXTRAPOLATION: 8 / 9 quarters<br>QUADRATIC SPEC: +14.5% loss</div>
+        <div class="card-tools">Python · scenario modeling</div>
+        <div class="card-cta">View repository ↗</div>
+      </a>
+
+      <a class="card" href="https://github.com/astrodud-rohan/Quantitative-Finance/tree/main/model_risk_tiering_framework" target="_blank" rel="noopener">
+        <div class="card-num">04</div>
+        <div class="card-title">Model risk tiering & inventory framework</div>
+        <div class="card-desc">SR 11-7 multi-factor tiering methodology applied to an 18-model inventory, presented to a mock Model Risk Committee.</div>
+        <div class="card-metrics">TIERS: 7 high / 8 med / 3 low<br>CYCLES: 12 / 18 / 36 mo<br>GAP: 13-validation capacity</div>
+        <div class="card-tools">Python · openpyxl · Excel</div>
+        <div class="card-cta">View repository ↗</div>
+      </a>
+
+      <a class="card" href="https://github.com/astrodud-rohan/Quantitative-Finance/tree/main/ongoing-monitoring-dashboard" target="_blank" rel="noopener">
+        <div class="card-num">05</div>
+        <div class="card-title">Ongoing monitoring dashboard for a deployed model</div>
+        <div class="card-desc">12 months of simulated production scoring with RAG escalation logic — shows population stability alone is an incomplete early-warning signal.</div>
+        <div class="card-metrics">DISCRIM. POWER: 123% → 74%<br>PSI: stable / green throughout</div>
+        <div class="card-tools">Python · HTML/CSS/JS</div>
+        <div class="card-cta">View repository ↗</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-title">Astrophysics research</div>
+      <div class="section-note">signal detection · statistical inference · classification</div>
+    </div>
+
+    <div class="grid">
+
+      <a class="card" href="https://github.com/astrodud-rohan/Astrophysics/tree/main/exoplanet-detection-transit-photometry" target="_blank" rel="noopener">
+        <div class="card-num">06</div>
+        <div class="card-title">Exoplanet transit detection & vetting</div>
+        <div class="card-desc">Two-stage BLS search + ML vetting pipeline mirroring real Kepler/TESS architecture, separating planets from false positives.</div>
+        <div class="card-metrics">ROC-AUC: 0.49 (raw) → 0.96 (vetted)<br>CNN baseline: 0.83</div>
+        <div class="card-tools">batman · astropy · scikit-learn · Keras</div>
+        <div class="card-cta">View repository ↗</div>
+      </a>
+
+      <a class="card" href="https://github.com/astrodud-rohan/Astrophysics/tree/main/stellar-classification-and-hr-diagram" target="_blank" rel="noopener">
+        <div class="card-num">07</div>
+        <div class="card-title">Stellar classification from a Gaia-like catalog</div>
+        <div class="card-desc">Unsupervised cluster recovery from proper motion + parallax alone, with an honestly-documented failure case.</div>
+        <div class="card-metrics">PLEIADES / HYADES: 100% purity<br>NGC 752: missed (1.5σ signal)</div>
+        <div class="card-tools">scikit-learn · GaussianMixture</div>
+        <div class="card-cta">View repository ↗</div>
+      </a>
+
+      <a class="card" href="https://github.com/astrodud-rohan/Astrophysics/tree/main/gravitational-wave-detection" target="_blank" rel="noopener">
+        <div class="card-num">08</div>
+        <div class="card-title">Gravitational wave detection & parameter estimation</div>
+        <div class="card-desc">Matched-filter search + MCMC Bayesian inference on a GW150914-like binary black hole merger.</div>
+        <div class="card-metrics">SNR recovered: 23.7 (matches real GW150914)<br>Merger time: ±5 ms</div>
+        <div class="card-tools">pycbc · emcee · corner</div>
+        <div class="card-cta">View repository ↗</div>
+      </a>
+
+      <a class="card" href="https://github.com/astrodud-rohan/Astrophysics/tree/main/galaxy-morphology-classification" target="_blank" rel="noopener">
+        <div class="card-num">09</div>
+        <div class="card-title">Galaxy morphology classification</div>
+        <div class="card-desc">Classical CAS / Gini-M20 features vs. a CNN on pixel images — the inverse result of project 01, run as a deliberate contrast.</div>
+        <div class="card-metrics">CNN: 96.6% · classical RF: 93.2%</div>
+        <div class="card-tools">scipy.ndimage · scikit-learn · Keras</div>
+        <div class="card-cta">View repository ↗</div>
+      </a>
+
+      <a class="card" href="https://github.com/astrodud-rohan/Astrophysics/tree/main/pulsar-candidate-identification" target="_blank" rel="noopener">
+        <div class="card-num">10</div>
+        <div class="card-title">Pulsar candidate identification — real HTRU2 survey data</div>
+        <div class="card-desc">17,898 real pulsar candidates from the Parkes radio telescope survey, handling a genuine 9.9:1 class imbalance.</div>
+        <div class="card-metrics">ROC-AUC: 0.978 → 0.987 (30-feat)<br>reproduces Lyon et al. 2016</div>
+        <div class="card-tools">scikit-learn · pandas</div>
+        <div class="card-cta">View repository ↗</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  Rohan Mukherjee · last updated manually
+</footer>
+
+</body>
+</html>
